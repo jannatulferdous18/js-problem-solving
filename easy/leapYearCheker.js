@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function isLeap(year) {
+    if(year%4!=0){
+        return false;
+    }
+    else if(year%4 == 0 && year%100!=0){
+        return true;
+    }
+    else if(year%4 == 0 && year%100==0 && year%400==0){
+        return true;
+    }
+    return false;
 }
 
-export default App;
+(isLeap(2000)==true) ? "Leap year." : "Not leap year.";
